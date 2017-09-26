@@ -6,4 +6,4 @@ development:
   database: todo
   max_connections: 10
 
-production: <%= CGI.escape(ENV["DATABASE_URL"]) %>
+production: mysql2%3A%2F%2Fb12366a846ffee%3Ad6ad316d%40us-cdbr-iron-east-05.cleardb.net%2Fheroku_94ac056803a837a%3Freconnect%3Dtrue

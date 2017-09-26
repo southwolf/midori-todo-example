@@ -2,8 +2,6 @@ require 'bundler'
 Bundler.require
 require 'json'
 require 'yaml'
-require 'erb'
-require 'cgi'
 
 env = ENV['MIDORI_ENV'] ? ENV['MIDORI_ENV'] : 'development'
 
@@ -11,8 +9,7 @@ Dir[File.dirname(__FILE__) + '/routes/*.rb'].each { |file| require file }
 Dir[File.dirname(__FILE__) + '/services/*.rb'].each { |file| require file }
 
 Midori::Configure.before = proc do
-  db_config = YAML.load(ERB.new(File.read('config/db.yml')).result)[env]
-  DB = Sequel.connect(db_config)
+  DB = Sequel.connect(YAML.load_file('config/db.yml')[env])  
   Dir[File.dirname(__FILE__) + '/models/*.rb'].each { |file| require file }
 end
 
