@@ -6,6 +6,4 @@ development:
   database: todo
   max_connections: 10
 
-production:
-  adapter: mysql2
-  url: <%= ENV['DATABASE_URL'] %>
+production: <%= ENV['DATABASE_URL'] %>
