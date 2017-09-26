@@ -12,7 +12,7 @@ gem 'mysql2', '~> 0.4', require: false
 
 gem 'uuid64'
 gem 'em-midori', '~> 0.4.0', require: 'midori'
-gem 'midori-contrib', '~> 0.0.1', require: %w(
+gem 'midori-contrib', '~> 0.1.0', require: %w(
     midori-contrib
     midori-contrib/file
     midori-contrib/sequel/mysql2
