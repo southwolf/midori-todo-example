@@ -9,7 +9,8 @@ Dir[File.dirname(__FILE__) + '/routes/*.rb'].each { |file| require file }
 Dir[File.dirname(__FILE__) + '/services/*.rb'].each { |file| require file }
 
 Midori::Configure.before = proc do
-  DB = Sequel.connect(YAML.load_file('config/db.yml')[env])
+  db_config = YAML.load(ERB.new(File.read('config/db.yml')).result)[env]
+  DB = Sequel.connect(db_config)
   Dir[File.dirname(__FILE__) + '/models/*.rb'].each { |file| require file }
 end
 
