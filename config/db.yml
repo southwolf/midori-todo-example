@@ -5,3 +5,7 @@ development:
   password: ''
   database: todo
   max_connections: 10
+
+production:
+  adapter: mysql2
+  url: <%= ENV['DATABASE_URL'] %>

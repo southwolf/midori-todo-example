@@ -15,3 +15,12 @@ $ rake vue:install
 $ rake vue:build
 $ rake run
 ```
+
+
+## Deploy to heroku
+
+```
+heroku create
+heroku addons:add cleardb
+
+```

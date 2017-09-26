@@ -21,4 +21,7 @@ class Route < Midori::API
   mount '_', ErrorRoute
 end
 
+Midori::Configure.set :bind, '0.0.0.0'
+Midori::Configure.set :port, ENV['PORT']
+
 Midori::Runner.new(Route).start
