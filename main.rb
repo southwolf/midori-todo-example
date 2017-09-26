@@ -2,6 +2,8 @@ require 'bundler'
 Bundler.require
 require 'json'
 require 'yaml'
+require 'erb'
+require 'cgi'
 
 env = ENV['MIDORI_ENV'] ? ENV['MIDORI_ENV'] : 'development'
 
