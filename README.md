@@ -23,4 +23,5 @@ $ rake run
 heroku create
 heroku addons:add cleardb
 heroku config:add MIDORI_ENV=production PORT=8080
+heroku buildpacks:add --index 1 heroku/nodejs
 ```
